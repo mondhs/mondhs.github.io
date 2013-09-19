@@ -1,0 +1,8 @@
+# In _config.yml
+markdown: rdiscount
+
+name: "Mondhs.github.io"
+description: "Various things on Speech Recognition"
+
+
+permalink: pretty
