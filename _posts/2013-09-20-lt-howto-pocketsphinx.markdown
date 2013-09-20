@@ -89,15 +89,11 @@ Kompiliuoti to su Linux OS:
 
 Paleisti Linux
 
-```
 	./robotas_pc
-
-```
 
 Kodas `robotas_pc.c`:
 
 
-```
 	#include <pocketsphinx.h>
 
 	int
@@ -141,16 +137,13 @@ Kodas `robotas_pc.c`:
 		ps_free(pocketsphinx);
 		return 0;
 	}
-```
 
 Rezultas gaunamas:
 
 
-```
 	INFO: ps_lattice.c(1365): Normalizer P(O) = alpha(</s>:201:201) = -249971
 	INFO: ps_lattice.c(1403): Joint P(O,S) = -252262 P(S|O) = -2291
 	Atpažinimo hipotezė: VARYK PIRMYN
-```
 
 
 [url-PocketSphinx-linux]: http://ghatage.com/2012/12/voice-to-text-in-linux-using-pocketsphinx/ 	"PocketSphinx In Linux"
