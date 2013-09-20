@@ -81,11 +81,11 @@ modeliu][url-lt-pocketsphinx-tutorial] kataoge
 
 Kompiliuoti to su Linux OS:
 
-```
+
     gcc -o robotas_pc robotas_ps.c \
     -DMODELDIR=\"`pkg-config --variable=modeldir pocketsphinx`\" \
     `pkg-config --cflags --libs pocketsphinx sphinxbase`
-```
+
 
 Paleisti Linux
 
