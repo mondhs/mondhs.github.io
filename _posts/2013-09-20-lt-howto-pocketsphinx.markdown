@@ -82,20 +82,26 @@ modeliu][url-lt-pocketsphinx-tutorial] kataoge
 Kompiliuoti to su Linux OS:
 
 ```
+
 gcc -o robotas_pc robotas_ps.c \
     -DMODELDIR=\"`pkg-config --variable=modeldir pocketsphinx`\" \
     `pkg-config --cflags --libs pocketsphinx sphinxbase`
+    
 ```
 
 Paleisti Linux
 
 ```
+
 ./robotas_pc
+
 ```
 
 Kodas `robotas_pc.c`:
 
+
 ```
+
 #include <pocketsphinx.h>
 
 int
@@ -139,6 +145,16 @@ main(int argc, char *argv[])
     ps_free(pocketsphinx);
 	return 0;
 }
+
+```
+Rezultas gaunamas
+
+```
+
+INFO: ps_lattice.c(1365): Normalizer P(O) = alpha(</s>:201:201) = -249971
+INFO: ps_lattice.c(1403): Joint P(O,S) = -252262 P(S|O) = -2291
+Atpažinimo hipotezė: VARYK PIRMYN
+
 ```
 
 
