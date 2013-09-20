@@ -58,7 +58,7 @@ Daugiau informacijos:
 PocketSphinx Naudojimas
 ----------------------
 
-### Programinės sąsajos dizaino pincipai
+### Programinės sąsajos dizaino principai
 
 Biblioteka buvo kuriama atsižvelgiant į kuo lengvesnį panaudojimą 
 programuotojui:
@@ -74,7 +74,12 @@ aprašas][url-pocketSphinx-api]
 
 ### Programos kodo pavyzdys
 
-Kompiliuoti Linux
+Kodą kuris buvo testuotas su pocketsphinx-0.8 ir basesphinx-08 galima 
+rasti mondhs@github: [PocketSphinx panaudojimas su Lietuvišku 
+modeliu][url-lt-pocketsphinx-tutorial] kataoge 
+[demo-src/robotas_ps.c](https://github.com/mondhs/lt-pocketsphinx-tutorial/blob/master/impl/demo-src/robotas_ps.c)
+
+Kompiliuoti to su Linux OS:
 
 ```
 gcc -o robotas_pc robotas_ps.c \
@@ -88,7 +93,7 @@ Paleisti Linux
 ./robotas_pc
 ```
 
-Kodas:
+Kodas `robotas_pc.c`:
 
 ```
 #include <pocketsphinx.h>
@@ -98,55 +103,40 @@ main(int argc, char *argv[])
 {
 	//Argumentai
 	/////////////////////////////
-	ps_decoder_t *ps;
+	ps_decoder_t *pocketsphinx;
 	cmd_ln_t *config;
-	FILE *fh;
+	FILE *fileHandler;
 	char const *hyp, *uttid;
-        int16 buf[512];
-	int rv;
 	int32 score;
 
 	//Inicializavimas
 	/////////////////////////////
 	config = cmd_ln_init(NULL, ps_args(), TRUE,
-			     "-hmm",  "../models/hmm/lt.cd_cont_200/",
-			     "-jsgf",  "../models/lm/robotas.gram",
-			     "-dict",  "../models/dict/robotas.dict",
+			     "-hmm",  "../models/hmm/lt.cd_cont_200/", //acustinis modelis
+			     "-jsgf",  "../models/lm/robotas.gram", //gramatika
+			     "-dict",  "../models/dict/robotas.dict", //žodynas
 			     NULL);
-	if (config == NULL){
-		return 1;
-	}
-	ps = ps_init(config);
-	if (ps == NULL){
-		return 1;
-	}
+	pocketsphinx = ps_init(config); // atpažintuvo inicializavimas
 
 	//Failo atidarymas skaitymui
 	/////////////////////////////
-	fh = fopen("../test/audio/test1.wav", "rb");
-	if (fh == NULL) {
-		perror("Failed to open test1.wav");
-		return 1;
-	}
+	fileHandler = fopen("../test/audio/test1.wav", "rb");
+
 
 	//Visos bylos turinio dekodavimas
 	/////////////////////////////
-	rv = ps_decode_raw(ps, fh, "robotas", -1);
-	if (rv < 0){
-		return 1;
-	}
+	ps_decode_raw(pocketsphinx, fileHandler, "robotas", -1);
+
 	// Hipotezės ištraukimas
 	/////////////////////////////
-	hyp = ps_get_hyp(ps, &score, &uttid);
-	if (hyp == NULL){
-		return 1;
-	}
+	hyp = ps_get_hyp(pocketsphinx, &score, &uttid);
+
 	printf("Atpažinimo hipotezė: %s\n", hyp);
 
 	// Bylos uždarymas
 	/////////////////////////////
-	fclose(fh);
-    ps_free(ps);
+	fclose(fileHandler);
+    ps_free(pocketsphinx);
 	return 0;
 }
 ```
@@ -157,3 +147,4 @@ main(int argc, char *argv[])
 [url-pocketSphinx-android]: http://cmusphinx.sourceforge.net/2011/05/building-pocketsphinx-on-android/   "Building Pocketsphinx On Android"
 [url-pocketSphinx-download]: http://cmusphinx.sourceforge.net/wiki/download "CMU Sphinx Downloads"
 [url-pocketSphinx-api]: http://cmusphinx.sourceforge.net/api/pocketsphinx/  "api pocketsphinx"
+[url-lt-pocketsphinx-tutorial]: https://github.com/mondhs/lt-pocketsphinx-tutorial/tree/master/impl  "LT Pocketsphinx apmokymas(Mondhs)"
