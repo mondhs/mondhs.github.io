@@ -82,18 +82,15 @@ modeliu][url-lt-pocketsphinx-tutorial] kataoge
 Kompiliuoti to su Linux OS:
 
 ```
-
-gcc -o robotas_pc robotas_ps.c \
+    gcc -o robotas_pc robotas_ps.c \
     -DMODELDIR=\"`pkg-config --variable=modeldir pocketsphinx`\" \
     `pkg-config --cflags --libs pocketsphinx sphinxbase`
-    
 ```
 
 Paleisti Linux
 
 ```
-
-./robotas_pc
+	./robotas_pc
 
 ```
 
@@ -101,60 +98,58 @@ Kodas `robotas_pc.c`:
 
 
 ```
+	#include <pocketsphinx.h>
 
-#include <pocketsphinx.h>
+	int
+	main(int argc, char *argv[])
+	{
+		//Argumentai
+		/////////////////////////////
+		ps_decoder_t *pocketsphinx;
+		cmd_ln_t *config;
+		FILE *fileHandler;
+		char const *hyp, *uttid;
+		int32 score;
 
-int
-main(int argc, char *argv[])
-{
-	//Argumentai
-	/////////////////////////////
-	ps_decoder_t *pocketsphinx;
-	cmd_ln_t *config;
-	FILE *fileHandler;
-	char const *hyp, *uttid;
-	int32 score;
+		//Inicializavimas
+		/////////////////////////////
+		config = cmd_ln_init(NULL, ps_args(), TRUE,
+					 "-hmm",  "../models/hmm/lt.cd_cont_200/", //acustinis modelis
+					 "-jsgf",  "../models/lm/robotas.gram", //gramatika
+					 "-dict",  "../models/dict/robotas.dict", //žodynas
+					 NULL);
+		pocketsphinx = ps_init(config); // atpažintuvo inicializavimas
 
-	//Inicializavimas
-	/////////////////////////////
-	config = cmd_ln_init(NULL, ps_args(), TRUE,
-			     "-hmm",  "../models/hmm/lt.cd_cont_200/", //acustinis modelis
-			     "-jsgf",  "../models/lm/robotas.gram", //gramatika
-			     "-dict",  "../models/dict/robotas.dict", //žodynas
-			     NULL);
-	pocketsphinx = ps_init(config); // atpažintuvo inicializavimas
-
-	//Failo atidarymas skaitymui
-	/////////////////////////////
-	fileHandler = fopen("../test/audio/test1.wav", "rb");
+		//Failo atidarymas skaitymui
+		/////////////////////////////
+		fileHandler = fopen("../test/audio/test1.wav", "rb");
 
 
-	//Visos bylos turinio dekodavimas
-	/////////////////////////////
-	ps_decode_raw(pocketsphinx, fileHandler, "robotas", -1);
+		//Visos bylos turinio dekodavimas
+		/////////////////////////////
+		ps_decode_raw(pocketsphinx, fileHandler, "robotas", -1);
 
-	// Hipotezės ištraukimas
-	/////////////////////////////
-	hyp = ps_get_hyp(pocketsphinx, &score, &uttid);
+		// Hipotezės ištraukimas
+		/////////////////////////////
+		hyp = ps_get_hyp(pocketsphinx, &score, &uttid);
 
-	printf("Atpažinimo hipotezė: %s\n", hyp);
+		printf("Atpažinimo hipotezė: %s\n", hyp);
 
-	// Bylos uždarymas
-	/////////////////////////////
-	fclose(fileHandler);
-    ps_free(pocketsphinx);
-	return 0;
-}
-
-```
-Rezultas gaunamas
-
+		// Bylos uždarymas
+		/////////////////////////////
+		fclose(fileHandler);
+		ps_free(pocketsphinx);
+		return 0;
+	}
 ```
 
-INFO: ps_lattice.c(1365): Normalizer P(O) = alpha(</s>:201:201) = -249971
-INFO: ps_lattice.c(1403): Joint P(O,S) = -252262 P(S|O) = -2291
-Atpažinimo hipotezė: VARYK PIRMYN
+Rezultas gaunamas:
 
+
+```
+	INFO: ps_lattice.c(1365): Normalizer P(O) = alpha(</s>:201:201) = -249971
+	INFO: ps_lattice.c(1403): Joint P(O,S) = -252262 P(S|O) = -2291
+	Atpažinimo hipotezė: VARYK PIRMYN
 ```
 
 
