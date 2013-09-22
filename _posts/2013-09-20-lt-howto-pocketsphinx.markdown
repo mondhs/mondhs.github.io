@@ -72,28 +72,38 @@ reikalingos atminties.
 *   PocketSphinx programuotojojo sąsaja gerai dokumentuota: [API 
 aprašas][url-pocketSphinx-api]
 
-### Programos kodo pavyzdys
+### Programos kodo pavyzdžio paleidimas
 
-Kodą kuris buvo testuotas su pocketsphinx-0.8 ir basesphinx-08 galima 
-rasti mondhs@github: [PocketSphinx panaudojimas su Lietuvišku 
-modeliu][url-lt-pocketsphinx-tutorial] kataoge 
-[demo-src/robotas_ps.c](https://github.com/mondhs/lt-pocketsphinx-tutorial/blob/master/impl/demo-src/robotas_ps.c)
+Kodas buvo testuotas su pocketsphinx-0.8 ir basesphinx-08. Daugiau informacijos galima 
+rasti aprašyme: PocketSphinx panaudojimas su Lietuvišku 
+modeliu [Mondhs@github/url-lt-pocketsphinx-tutorial][url-lt-pocketsphinx-tutorial].  
 
-Kompiliuoti to su Linux OS:
+* Pasiruošite aplinka.
+* Sukompiliuoti kodą (Linux OS):
 
-
-    gcc -o robotas_pc robotas_ps.c \
+```
+    gcc -o robotas_ps robotas_ps.c \
     -DMODELDIR=\"`pkg-config --variable=modeldir pocketsphinx`\" \
     `pkg-config --cflags --libs pocketsphinx sphinxbase`
+```
 
+* Paleisti komandą (Linux OS)
 
-Paleisti Linux
+	`./robotas_ps`
+	
+* Rezultate, jei viskas gerai, matoma [test1.wav](https://github.com/mondhs/lt-pocketsphinx-tutorial/blob/master/impl/test/audio/test1.wav) atapžinimo rezultatai:	
 
-	./robotas_pc
+```
+	INFO: ps_lattice.c(1365): Normalizer P(O) = alpha(</s>:201:201) = -249971
+	INFO: ps_lattice.c(1403): Joint P(O,S) = -252262 P(S|O) = -2291
+	Atpažinimo hipotezė: VARYK PIRMYN
+```
 
-Kodas `robotas_pc.c`:
+### Pavyzdžio programos kodas
+	
+	
 
-
+* Kodas [robotas_ps.c](https://github.com/mondhs/lt-pocketsphinx-tutorial/blob/master/impl/demo-src/robotas_ps.c):
 	#include <pocketsphinx.h>
 
 	int
@@ -138,12 +148,7 @@ Kodas `robotas_pc.c`:
 		return 0;
 	}
 
-Rezultas gaunamas:
 
-
-	INFO: ps_lattice.c(1365): Normalizer P(O) = alpha(</s>:201:201) = -249971
-	INFO: ps_lattice.c(1403): Joint P(O,S) = -252262 P(S|O) = -2291
-	Atpažinimo hipotezė: VARYK PIRMYN
 
 
 [url-PocketSphinx-linux]: http://ghatage.com/2012/12/voice-to-text-in-linux-using-pocketsphinx/ 	"PocketSphinx In Linux"
