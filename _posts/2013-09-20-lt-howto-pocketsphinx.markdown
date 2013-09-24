@@ -2,6 +2,8 @@
 layout: post 
 title: PocketSphinx Naudojamas
 lang: lt
+categories:
+    - lt
 ---
 
 

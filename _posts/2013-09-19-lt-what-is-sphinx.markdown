@@ -2,7 +2,17 @@
 layout: post 
 title: Kas yra CMU Sphinx
 lang: lt
+date: 2013-09-19 23:59
+categories:
+    - lt
+tags:
+- Sphinx-1
+- Sphinx-2
+- Sphinx-3
+- Sphinx-4    
 ---
+
+
 
 CMU Sphinx
 ---------------------

@@ -7,6 +7,11 @@ layout: default
 </div>
 
 <div id="related">
+  <h6>Post tags</h6>
+  {% for tag in page.tags %}
+  {{ tag }}
+  {% endfor %}
+  
   <h6>Related Posts</h6>
   <ul class="posts">
     {% for post in site.related_posts limit:3 %}

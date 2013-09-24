@@ -2,6 +2,8 @@
 layout: post 
 title: Sphinx-4 Naudojamas
 lang: lt
+categories:
+    - lt
 ---
 
 

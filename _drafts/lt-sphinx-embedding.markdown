@@ -1,7 +1,16 @@
 ---
 layout: post 
-title: Sphinx - technologiniai sprendimai
+title: Sphinx - technologiniai deigimai
 lang: lt
+categories:
+    - lt
+summary: Kaip ir kur galima prisukti CMU Sphinx atpažintuvą?
+tags:
+- Telefonas
+- Naršyklė
+- Serveris
+- Pocketshinx
+- Sphinx-4
 ---
 
 
