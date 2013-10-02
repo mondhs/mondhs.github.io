@@ -4,6 +4,8 @@ title: Sphinx-4 Naudojamas
 lang: lt
 categories:
     - lt
+summary: Sphinx-4 panaudojimo pavyzdys(Java kalba)     
+date: 2013-09-22 23:59    
 ---
 
 

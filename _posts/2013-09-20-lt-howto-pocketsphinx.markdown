@@ -4,6 +4,8 @@ title: PocketSphinx Naudojamas
 lang: lt
 categories:
     - lt
+summary: PocketSphinx programinis panaudojo pavyzdys(C kalba)    
+date: 2013-09-20 23:59
 ---
 
 
