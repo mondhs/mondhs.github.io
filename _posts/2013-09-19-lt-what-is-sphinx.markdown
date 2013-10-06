@@ -101,6 +101,6 @@ paslėptų Markovo akustinių modelių (HMMs) ir n-gram statistiniu kalbos model
 [url-cmusphinx]: http://cmusphinx.sourceforge.net/ 	"CMU Sphinx"
 [url-sphinx-wikipedia]: http://en.wikipedia.org/wiki/CMU_Sphinx        "CMUSphinx-Wikipedia"
 
-[img-sphinx-4-logo]: {{ site.url }}/images/lt-what-is-sphinx_sphinx-4-logo.gif "Sphinx-4"
+[img-sphinx-4-logo]: {{ site.url }}/assets/images/lt-what-is-sphinx_sphinx-4-logo.gif "Sphinx-4"
 
 

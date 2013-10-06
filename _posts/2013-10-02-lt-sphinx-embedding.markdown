@@ -79,4 +79,4 @@ Naršyklės serverio pusėje atpažinimas:
 [url-dragon-voxscis]: http://techcrunch.com/2013/06/24/like-google-voice-but-live-outside-the-us-then-try-voxscis-new-io6andoid-app/ "Like Google Voice But Live Outside The US? Then Try VoxSci’s New iO6/Android App"
 [url-pocketshpinx-js]:https://github.com/syl22-00/pocketsphinx.js "Speech recognition in JavaScript"
 
-[img-sphinx-deployment]: {{ site.url }}/images/lt-sphinx-embedding_sphinx-deployment.png "Sphinx-4"
+[img-sphinx-deployment]: {{ site.url }}/assets/images/lt-sphinx-embedding_sphinx-deployment.png "Sphinx-4"
