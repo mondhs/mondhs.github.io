@@ -60,8 +60,9 @@ tags:
 				recognitionTotal : 0
 			};
 			var recognitionManager = new RecognitionManager();
-			var recogniserServerUrl = "http://localhost:8080/rest/recognize";
-			//recognitionManager.changeRecognitionContext("http://spantusspeech-2.spantus.cloudbees.net/rest/recognize/stream/lt_robotas/suk kairėn");
+			var recogniserServerUrl = 
+				//"http://localhost:8080/rest/recognize";
+				"http://spantusspeech-2.spantus.cloudbees.net/rest/recognize";
 			recognitionManager.changeRecognitionUrl(recogniserServerUrl
 					+ "/stream/lt_robotas/-");
 			recognitionManager
