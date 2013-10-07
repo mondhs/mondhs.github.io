@@ -159,7 +159,7 @@ tags:
 						$('#phraseText').text(recognitionCtx.transcribe);
 						$('#recognzerGrammar').text(recognitionCtx.grammar);
 						recognitionManager
-								.changeRecognitionUrl(recogniserServerUrl
+								.setRecognitionUrl(recogniserServerUrl
 										+ "/stream/" + data.grammar + "/"
 										+ data.transcribe);
 						console.log("Retrieved: " + JSON.stringify(data));
