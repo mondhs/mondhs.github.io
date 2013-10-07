@@ -63,8 +63,9 @@ tags:
 			var recogniserServerUrl = 
 				//"http://localhost:8080/rest/recognize";
 				"http://spantusspeech-2.spantus.cloudbees.net/rest/recognize";
-			recognitionManager.changeRecognitionUrl(recogniserServerUrl
+			recognitionManager.setRecognitionUrl(recogniserServerUrl
 					+ "/stream/lt_robotas/-");
+			recognitionManager.setWorkerPath("http://spantusspeech-2.spantus.cloudbees.net/js/libs/recorder/recorderWorker.js");					
 			recognitionManager
 					.changeCallbacks({
 						"onError" : function(msg) {
