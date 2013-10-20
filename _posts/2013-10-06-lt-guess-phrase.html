@@ -61,8 +61,8 @@ tags:
 			};
 			var recognitionManager = new RecognitionManager();
 			var recogniserServerUrl = 
-				//"http://localhost:8080/rest/recognize";
-				"http://spantusspeech-2.spantus.cloudbees.net/rest/recognize";
+				//"http://localhost:8080/api/recognize";
+				"http://spantusspeech-2.spantus.cloudbees.net/api/recognize";
 			recognitionManager.setRecognitionUrl(recogniserServerUrl
 					+ "/stream/lt_robotas/-");
 			
@@ -113,7 +113,7 @@ tags:
 							$("#recognzerError").text(errorRatio);
 							$("#recognitionResult").text(data.result);
 							$("#recognitionResult").text(data.result);
-							$('ul').prepend(
+							$('#recognitionResultsList').prepend(
 									'<li><span class="label label-'+style+'"><span class="glyphicon glyphicon-'+icon+'-circle"></span></span>'
 											+  "Tikėtasi: " + transcribe
 											+ "; Atpažinta: " + data.result +" (Gramatika: " + grammar +')</li>');
@@ -160,7 +160,7 @@ tags:
 						$('#recognzerGrammar').text(recognitionCtx.grammar);
 						recognitionManager
 								.setRecognitionUrl(recogniserServerUrl
-										+ "/stream/" + data.grammar + "/"
+										+ "/public/stream/" + data.grammar + "/"
 										+ data.transcribe);
 						console.log("Retrieved: " + JSON.stringify(data));
 					}
