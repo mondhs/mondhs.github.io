@@ -49,9 +49,9 @@ tags:
 		</div>
 </div>
 <div id="recognizerMessages"></div>
-<script src="http://spantusspeech-2.spantus.cloudbees.net/js/libs/AudioContext-MonkeyPatch/AudioContextMonkeyPatch.js"></script>
-<script src="http://spantusspeech-2.spantus.cloudbees.net/js/libs/recorder/recorder.js"></script>
-<script src="http://spantusspeech-2.spantus.cloudbees.net/js/libs/recorder/recognitionManager.js"></script>
+<script src="http://speech.spantus.cloudbees.net/js/libs/AudioContext-MonkeyPatch/AudioContextMonkeyPatch.js"></script>
+<script src="http://speech.spantus.cloudbees.net/js/libs/recorder/recorder.js"></script>
+<script src="http://speech.spantus.cloudbees.net/js/libs/recorder/recognitionManager.js"></script>
 <script>
 	
 		$(function() {
@@ -62,7 +62,7 @@ tags:
 			var recognitionManager = new RecognitionManager();
 			var recogniserServerUrl = 
 				//"http://localhost:8080/api/recognize";
-				"http://spantusspeech-2.spantus.cloudbees.net/api/recognize";
+				"http://speech.spantus.cloudbees.net/api/recognize";
 			recognitionManager.setRecognitionUrl(recogniserServerUrl
 					+ "/stream/lt_robotas/-");
 			
