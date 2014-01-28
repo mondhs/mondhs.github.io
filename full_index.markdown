@@ -1,19 +1,11 @@
 ---
 layout: default
-title: Mano Puslapis, My Page
-lang: lt
-categories:
-- lt
+title: Turinys, Index
 ---
 
-<div class="jumbotron">
-  <h1 class="text-center">{'lt':'Sveiki'}, {'en':'Hello'}</h1>
-    <p class="text-center">The Answer to the Ultimate Question of Life, the Universe, and Everything</p>
-    <p class="text-center"><a href="http://en.wikipedia.org/wiki/42_%28number%29"><span class="badge">42<span></a></p>
-</div>
-
 <div class="col-md-6">
-{% for post in site.posts limit:5 %}
+<h1>Turinys</h1>
+{% for post in site.posts %}
 {% if post.url contains '/lt/' %}
 <ul class="list-inline">
 	<li><a href="{{ post.url }}">[{{post.lang}}] {{ post.title | truncate:200 }}</a><p><small>{{ post.date | date: "%y-%m-%d" }}</small> <span class="entry">{{ post.summary }}</span></p></li>
@@ -22,7 +14,8 @@ categories:
 {% endfor %}
 </div>
   <div class="col-md-6">
-{% for post in site.posts limit:5 %}
+<h1>Index</h1>
+{% for post in site.posts%}
 {% if post.url contains '/en/' %}
 <ul class="list-inline">
 	<li><a href="{{ post.url }}">[{{post.lang}}] {{ post.title | truncate:200 }}</a><p><small>{{ post.date | date: "%y-%m-%d" }}</small> <span class="entry">{{ post.summary }}</span></p></li>
