@@ -25,13 +25,18 @@ Espeak
 
 [Wikipedijoje Espeak][url-espeak-wikipedia] yra aprašoma kaip kompaktiška atvirojo kodo programinė įranga balso sintezavimui. Ji veikia ant MS Windows ir Linux operacinių sistemų. Šnekos sintezavimo variklis naudoja formančių sintezavimą ir palaiko daugelių kalbų. Projektai NVDA, Ubuntu ir OLPC, Google Translate naudojo ar naudoja eSpeak.
 
-eSpeak projekto kilmė yra naudojimas Acorn RISC OS sintezatorius, kuris buvo pradėtas rašyti 1995 Jonathan Duddington. Perašyta versija Linux OS pasirodė 2006, o 2007 sausį pasirodė Windows SAPI 5 sudrinama versija.
+eSpeak projekto kilmė yra naudojimas Acorn RISC OS sintezatorius, kuris buvo pradėtas rašyti 1995 Jonathan Duddington. Perrašyta versija Linux OS pasirodė 2006, o 2007 sausį pasirodė Windows SAPI 5 sudrinama versija.
 
-Sintezatorius palaiko 68 kalbas. Kokybė sintezuojamų kalbų yra skirtinga, kadangi sintezavimo staklėmis aprašyti naudojama grįžtamoji informaciją iš gimtosios kalbos kalbėtojų nevisada yra pakankama.
+Sintezatorius palaiko 68 kalbas. Kokybė sintezuojamų kalbų yra skirtinga, kadangi sintezavimo staklėmis aprašyti naudojama grįžtamoji informaciją iš gimtosios kalbos kalbėtojų ne visada yra pakankama.
 
 
-Sintezatorius susideda iš dviejųdalių grafema fonema transfomacija ir fonema garsas transformacija. fonema->garsas galima naudoti ir kitus variklius(MBROLA) ([P. Kasparaitis. Diphone databases for Lithuanian text-to-speech synthesis. Informatica. 2005][url-espeak-lt-mbrolla])
+Sintezatorius susideda iš dviejų dalių: grafema fonema transformacija ir fonema garsas transformacija. fonema->garsas galima naudoti ir kitus variklius(MBROLA) ([P. Kasparaitis. Diphone databases for Lithuanian text-to-speech synthesis. Informatica. 2005][url-espeak-lt-mbrolla])
 
+Sintezatorius palaikos standartus:
+* [http://en.wikipedia.org/wiki/Speech_Synthesis_Markup_Language](SSML)
+* [http://en.wikipedia.org/wiki/Speech_Application_Programming_Interface](Windows SAPI 5)
+
+paslėptų Markovo akustinių modelių (HMMs) ir n-gram statistiniu kalbos modeliu. 
 
 Espeak programavimo pavyzdžiai
 ---------------------
@@ -86,7 +91,7 @@ Dabartinė žinoma versija 1.48.02 [espeak.sourceforge.net/download.html][url-es
 Lietuvių kalba espeak yra palaikoma nuo 2012 metų 1.46.20 versijos. Dabartinė žinoma versija [github.com/mondhs/espeak][url-espeak-lt].
 Grafemų-fonemų transformacijų taisyklės aprašytos: [github.com/mondhs/.../dictsource/lt_list][url-espeak-lt-rules]
 
-### Kitos eSpeak susiją projektai
+### Kiti eSpeak susieją projektai
 * Android OS sumaniems telfonams: Lietuvių kalbai: [github.com/mondhs/.../android][url-espeak-lt-android]
 * Mokama atviro kodo projekto [github.com/rhdunn/espeak][url-espeak-en] versija Android OS [play.google.com/.../espeak][url-espeak-en-android]
 * Arabų kalbai [https://github.com/arabic-tools/ar-espeak][url-espeak-ar]
@@ -96,14 +101,14 @@ Grafemų-fonemų transformacijų taisyklės aprašytos: [github.com/mondhs/.../d
 
 Espeak pasiruošimas tobulinimui
 ---------------------
-Detalesnė informacija pateikta [Prisijungimas prie tobulinimo][url-espeak-lt-participation]. Parsiųsti galima iš github kodo saugylos  ```git clone https://github.com/mondhs/espeak```
+Detalesnė informacija pateikta [Prisijungimas prie tobulinimo][url-espeak-lt-participation]. Parsiųsti galima iš github kodo saugyklos  ```git clone https://github.com/mondhs/espeak```
 
 ### Duomenų redagavimas
 Toliau pateiktas svarbiausių aspektų aprašas lietuvių kalba.
-### Skaitymo taisyklės 
+### Grafema->Phonemos transformacijos taisyklės 
 Už jas atsako '''espeak-data/dictsource''' kataloge esantys failai.
 #### lt_rules 
-Čia talpinamos pagrindinės skaitymo taisyklės.
+Čia talpinamos pagrindinės transformacijos taisyklės.
 Jos aprašomos pagal tokią struktūrą: 
 
 ```
@@ -126,23 +131,23 @@ Pavyzdžiui:
 ```
 
 #### lt_list 
-Čia aprašomi ypatingi skaitymo atvejai.
+Čia aprašomi išimtiniai žodžių tarimo atvėjai.
 Pavyzdys:
  manęs     $2         // kirčiuojamas antras skiemuo
 
 #### lt_listx 
-'''lt_listx''' failas papildo '''lt_list''' failą.
+```lt_listx``` failas papildo ```lt_list``` failą, skrita kalboms kurios turi per daug išimtinių atvėjų.
 ### Fonemos 
-Už fonemas atsako '''espeak-data/phsource/''' kataloge esantys failai. 
+Už fonemas atsako ```espeak-data/phsource/``` kataloge esantys failai. 
 #### ph_lithuanian 
-Ši interpretacija naudojama, kai pasirenkamas ''lt'' balsas.
+Ši interpretacija naudojama, kai pasirenkamas ```lt``` balsas.
 #### mbrola/lt1 ir mbrola/lt2 
-'''espeak-data/phsource/mbrola/''' kataloge esantys failai aprašo espeak ir mbrola fonemų sąsajas; būtent '''lt1''' ir '''lt2''' failai aprašo fonemų interpretavimą, kai naudojamas ''mb/mb-lt1'' arba ''mb/mb-lt2'' balsas.
+```espeak-data/phsource/mbrola/``` kataloge esantys failai aprašo espeak ir mbrola fonemų sąsajas; būtent ```lt1``` ir ```lt2``` failai aprašo fonemų interpretavimą, kai naudojamas ```mb/mb-lt1``` arba ```mb/mb-lt2``` balsas.
 ## Fonemų ir žodyno kompiliavimas 
-Jį reikia atlikti, jei atlikote pakeitimus ''espeak-data/dictsource/lt_rules'' (tarimo taisyklės), ''espeak-data/dictsource/lt_list'' (įvardžių, sutrumpinimų, skaičių ir t.t tarimas), ''espeak-data/dictsource/lt_listx'' ar ''espeak-data/phsource/ph_lithuanian'', reikia iš naujo sukompiliuoti ''espeak-data/'' ''espeak-data/lt_dict''. 
-Tam '''espeakedit''' grafinėje programoje eikite per meniu ''Compile > phoneme data'' ir ''Compile > dictionary 'lt'''
+Jį reikia atlikti, jei atlikote pakeitimus ```espeak-data/dictsource/lt_rules``` (tarimo taisyklės), ```espeak-data/dictsource/lt_list``` (įvardžių, sutrumpinimų, skaičių ir t.t tarimas), ```espeak-data/dictsource/lt_listx``` ar ```espeak-data/phsource/ph_lithuanian```, reikia iš naujo sukompiliuoti ```espeak-data/``` ```espeak-data/lt_dict```. 
+Tam ```espeakedit``` grafinėje programoje eikite per meniu ```Compile > phoneme data``` ir ```Compile > dictionary lt```
 
-Jei keitėte ''espeak-data/phsource/mbrola/lt1'' arba ''espeak-data/phsource/mbrola/lt2'', tuomet prieš tai dar reikia '''espeakedit''' grafinėje programoje eiti per meniu ''Compile > Compile mbrola phonemes list''.
+Jei keitėte ```espeak-data/phsource/mbrola/lt1``` arba ```espeak-data/phsource/mbrola/lt2```, tuomet prieš tai dar reikia ```espeakedit``` grafinėje programoje eiti per meniu ```Compile > Compile mbrola phonemes list```.
 
 
 
@@ -154,15 +159,14 @@ Jei keitėte ''espeak-data/phsource/mbrola/lt1'' arba ''espeak-data/phsource/mbr
 
 ## Nuorodos
 ---------------------
-* Diskusijų forumas apie espeak-lt: http://www.ubuntu.lt/forum/viewtopic.php?f=3&t=7439
-* Espeak openSUSE sistemoje: http://opensuse.lt/index.php?option=com_content&view=article&id=115:espeak-lietuviko-teksto-skaitymas&catid=20:programos&Itemid=2
-* Klausimas eSpeak forume: https://sourceforge.net/projects/espeak/forums/forum/538922/topic/5417656 
-* Fonetika: http://ualgiman.dtiltas.lt/fonetika.html
-* Kirčiavimas: http://ualgiman.dtiltas.lt/kirciavimas.html
-* Internetinis kirčiavimo įrankis: http://donelaitis.vdu.lt/main.php?id=4&nr=9_1
-* Apie kirčiavimą vikipedijoje: http://lt.wikipedia.org/wiki/Lietuvi%C5%B3_kalbos_kir%C4%8Diavimas 
+* Diskusijų forumas apie espeak-lt: [http://www.ubuntu.lt/forum/viewtopic.php?f=3&t=7439](http://www.ubuntu.lt/forum/viewtopic.php?f=3&t=7439)
+* Espeak openSUSE sistemoje: [http://opensuse.lt/index.php?option=com_content&view=article&id=115:espeak-lietuviko-teksto-skaitymas&catid=20:programos&Itemid=2](http://opensuse.lt/index.php?option=com_content&view=article&id=115:espeak-lietuviko-teksto-skaitymas&catid=20:programos&Itemid=2)
+* Klausimas eSpeak forume: [https://sourceforge.net/projects/espeak/forums/forum/538922/topic/5417656](https://sourceforge.net/projects/espeak/forums/forum/538922/topic/5417656 )
+* Fonetika: [http://ualgiman.dtiltas.lt/fonetika.html](http://ualgiman.dtiltas.lt/fonetika.html)
+* Kirčiavimas: [http://ualgiman.dtiltas.lt/kirciavimas.html](http://ualgiman.dtiltas.lt/kirciavimas.html)
+* Internetinis kirčiavimo įrankis: [http://donelaitis.vdu.lt/main.php?id=4&nr=9_1](http://donelaitis.vdu.lt/main.php?id=4&nr=9_1)
+* Apie kirčiavimą vikipedijoje: [http://lt.wikipedia.org/wiki/Lietuvi%C5%B3_kalbos_kir%C4%8Diavimas ](http://lt.wikipedia.org/wiki/Lietuvi%C5%B3_kalbos_kir%C4%8Diavimas )
 
-paslėptų Markovo akustinių modelių (HMMs) ir n-gram statistiniu kalbos modeliu. 
 
 
 [img-espeak-logo]: http://espeak.sourceforge.net/images/lips.png "Espeak logo"
