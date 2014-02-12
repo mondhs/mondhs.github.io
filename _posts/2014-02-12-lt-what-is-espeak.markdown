@@ -174,7 +174,7 @@ Jei keitėte ```espeak-data/phsource/mbrola/lt1``` arba ```espeak-data/phsource/
 [url-espeak-wikipedia]: http://en.wikipedia.org/wiki/ESpeak	"Espeak wikipedia"
 [url-espeak-lt]: https://github.com/mondhs/espeak "Espeak lietuvių kalba"
 [url-espeak-lt-android]: https://github.com/mondhs/espeak/tree/master/android "Espeak Android OS lietuvių kalba"
-[url-espeak-lt-participation]: [https://github.com/mondhs/espeak/wiki/Participation "Prisijungimas prie tobulinimo"
+[url-espeak-lt-participation]: https://github.com/mondhs/espeak/wiki/Participation "Prisijungimas prie tobulinimo"
 [url-espeak-lt-rules]: https://github.com/mondhs/espeak/blob/master/dictsource/lt_list "Espeak transformavimo taisyklės"
 [url-espeak-lt-klatt2-sample]: https://raw2.github.com/mondhs/espeak-sample/master/output/talkingClockEspeak-klatt2.wav "klatt2 espeak"
 [url-espeak-lt-mbrola-sample]: https://raw2.github.com/mondhs/espeak-sample/master/output/talkingClockEspeak.wav "mbrola espeak"
