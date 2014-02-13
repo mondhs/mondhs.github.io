@@ -33,6 +33,7 @@ Sintezatorius palaiko 68 kalbas. Kokybė sintezuojamų kalbų yra skirtinga, kad
 Sintezatorius susideda iš dviejų dalių: grafema fonema transformacija ir fonema garsas transformacija. fonema->garsas galima naudoti ir kitus variklius(MBROLA) ([P. Kasparaitis. Diphone databases for Lithuanian text-to-speech synthesis. Informatica. 2005][url-espeak-lt-mbrolla])
 
 Sintezatorius palaikos standartus:
+
 * [http://en.wikipedia.org/wiki/Speech_Synthesis_Markup_Language](SSML)
 * [http://en.wikipedia.org/wiki/Speech_Application_Programming_Interface](Windows SAPI 5)
 
@@ -48,11 +49,11 @@ Daugiau informacijos galima rasti: [github.com/mondhs/espeak-sample][url-espeak-
 Norint patikrinti ar espeak veikia lietuviškai galima paleisti komandą komandinėje eilutėje:
 
 ```
-    $espeak  -v mb-lt1  "11 valandų 56 minutės" -x 
+    $espeak  -vlt  "11 valandų 56 minutės" -x 
     # Turi būti matomas fonemos v;ien'uol;ika val'andu: p;'ENk;ez;d;eS;imtS;eS'I m;in'ut;ees
     # turi būti girdima lietuviškais skaitmenimis tariama šneka
 ```
-Audio pavyzdys: [Wav MBROLA balsas][url-espeak-lt-mbrola-sample]
+Audio pavyzdys: [Wav klatt2 balsas][url-espeak-lt-klatt2-sample]
 
 ## C++ kalboje
 
@@ -72,7 +73,7 @@ Audio pavyzdys: [Wav MBROLA balsas][url-espeak-lt-mbrola-sample]
         return 0;
     }
 ```
-Audio pavyzdys: [Wav klatt2 balsas][url-espeak-lt-klatt2-sample]
+Audio pavyzdys: [Wav MBROLA balsas][url-espeak-lt-mbrola-sample] 
 
 
 Espeak Versijos
