@@ -56,23 +56,19 @@ Audio pavyzdys: [Wav MBROLA balsas][url-espeak-lt-mbrola-sample]
 
 ## C++ kalboje
 
-[C++ pavizdys sampleSpeak.cpp][url-espeak-sample-cpp]
+[C++ pavyzdys][url-espeak-sample-cpp]
 
 ```
-    int main(int argc, char* argv[] ){
-        char text[30] = {"11 valandų 56 minutės"};//Tariamas tekstas
-        espeak_Initialize(AUDIO_OUTPUT_PLAYBACK, 500, NULL, 0 );//inicializavimas
-        const char *langNativeString = "lt"; //Lietuvių kalba
-        espeak_VOICE voice;//balso paruošimas
-        memset(&voice, 0, sizeof(espeak_VOICE)); // atminties rezervavimas balso duomenų struktūrai
-        voice.languages = langNativeString;
-        voice.name = "klatt";
-        voice.variant = 2;
-        voice.gender = 1;
-        espeak_SetVoiceByProperties(&voice);//nustatome balsą
-        Size = strlen(text)+1;
-        espeak_Synth( text, Size, position, position_type, end_position, flags,unique_identifier, user_data );
-        espeak_Synchronize( );
+    #include <./src/speak_lib.h>
+    int main(int argc, char* argv[] ) {
+        char text[32] = {"1. Labas. Šauk. Laikas. Taika"};//Tariamas tekstas
+        espeak_Initialize(AUDIO_OUTPUT_PLAYBACK, 0, NULL, 0 ); // paruošiamas eSpeak variklis
+        espeak_SetVoiceByName("mb-lt1");// nustatomas Mbrola lietuvių 1 garas
+        unsigned int size = 0; // saičius kiek tariamų simbolių yra masyve
+        while(text[size]!='\0') size++;//suskaičiuojam pilnu perinkimu tariamus simbolius ==strlen(text)
+        unsigned int flags=espeakCHARS_AUTO | espeakENDPAUSE;//Auto: utf8 ar 8bit,
+        espeak_Synth( text, size+1, 0,POS_CHARACTER,0, flags, NULL, NULL );// grafema->fonema->garsas transformacija
+        espeak_Synchronize( ); //Lukterėti kol pasibaigs viską ištarti.
         return 0;
     }
 ```
@@ -186,5 +182,5 @@ Jei keitėte ```espeak-data/phsource/mbrola/lt1``` arba ```espeak-data/phsource/
 [url-espeak-js]: https://github.com/kripken/speak.js "Espeak javascript"
 [url-espeak-at-github]: https://github.com/search?q=espeak&ref=searchresults&type=Repositories "Espeak githube"
 [url-espeak-sample]: https://github.com/mondhs/espeak-sample "Espeak programiniai pavyzdžiai"
-[url-espeak-sample-cpp]: https://github.com/mondhs/espeak-sample/blob/master/sampleSpeak.cpp "Espeak cpp"
+[url-espeak-sample-cpp]: https://github.com/mondhs/espeak-sample/blob/master/sampleMbrolaSpeak.cpp "Espeak cpp"
 
