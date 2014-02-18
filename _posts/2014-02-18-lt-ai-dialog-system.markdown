@@ -2,7 +2,7 @@
 layout: post 
 title: Užsakymų balsu sistema
 lang: lt
-date: 2014-02-12 23:59
+date: 2014-02-18 23:59
 categories:
     - lt
 summary: Diagramos ir aprašai galimos sistemos užsakymu balsu 
