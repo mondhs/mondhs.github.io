@@ -30,7 +30,7 @@ Dialogas
 
 ## Nuorodos
 ---------------------
-* [url-mindcollapse-sample](Programinis pavyzdys)
+* [Programinis pavyzdys AI sistemos per skype][url-mindcollapse-sample]
 
 
 
