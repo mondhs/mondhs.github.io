@@ -171,7 +171,7 @@ Dictionary was created with [scripts](https://github.com/mondhs/lt-pocketsphinx-
         while os.path.exists(self.lockFile):
             time.sleep(.100)
 
-where [`espeak-skype-lt.sh`](https://github.com/mondhs/Sphinx-skype-bot/blob/master/sphinx-skype-bot/to_mswav.py) is command line tool, that generates with eSpeak TTS engine file in 22kHz wav file. then it is resampled to 16kHz with sox tool. and as [Skype Wav format] is not common there is additional transformation [`to_mswav.py`](https://github.com/mondhs/Sphinx-skype-bot/blob/master/sphinx-skype-bot/to_mswav.py) needed.
+where [`espeak-skype-lt.sh`](https://github.com/mondhs/Sphinx-skype-bot/blob/master/sphinx-skype-bot/espeak-skype-lt.sh) is command line tool, that generates with eSpeak TTS engine file in 22kHz wav file. then it is resampled to 16kHz with sox tool. and as [Skype Wav format] is not common there is additional transformation [`to_mswav.py`](https://github.com/mondhs/Sphinx-skype-bot/blob/master/sphinx-skype-bot/to_mswav.py) needed.
 
 
 [img-bot-system]: {{ site.url }}/assets/images/en-bot-system-diagram.png "Bot Dialog system"
