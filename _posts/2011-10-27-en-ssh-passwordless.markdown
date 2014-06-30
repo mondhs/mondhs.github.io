@@ -54,6 +54,13 @@ Copy the file "foobar.txt" from the local host to a remote host
     tar -zxvf file.tar.gz
 ```
 
+### How to get durations
+
+```
+    find -iname '*.wav' -exec soxi -D '{}' \; | awk '{ SUM += $1} END { print SUM }'  
+```
+
+
 
 ### How to run user application on Ubuntu startup 
 
