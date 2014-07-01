@@ -60,6 +60,10 @@ Copy the file "foobar.txt" from the local host to a remote host
     find -iname '*.wav' -exec soxi -D '{}' \; | awk '{ SUM += $1} END { print SUM }'  
 ```
 
+```
+    find -iname '*.wav' -exec sh -c "echo -n '{},'; soxi -D {}" \;> test.csv
+```
+
 
 
 ### How to run user application on Ubuntu startup 
