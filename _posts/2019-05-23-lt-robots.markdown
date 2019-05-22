@@ -1,0 +1,26 @@
+---
+layout: post
+title: Robotai edukacijai
+lang: lt
+date: 2019-05-22 23:59
+categories:
+    - lt
+summary: Robotai skirti mokymo tikslams
+tags:
+- Robots
+---
+
+
+Robotai Edukacijai
+---------------------
+
+### Robotai
+
+1. Nao v6 9000€. Pilnai pritaikytas naudoti mokymo tikslams tiek išvaizda, tiek programine įranga. kaina iš [robotlab](https://www.robotlab.com/store/nao-power-v6-educator-pack)
+2. Poppy. Atviro kodo ir platformos [poppy-project](https://github.com/poppy-project/poppy-humanoid). Projektas nebeaktyvus nuo 2017. Kaina apie 9000€ iš [generationrobots](https://www.generationrobots.com/en/403347-poppy-humanoid-robot-raspberry-pi-version-with-3d-parts.html). Dabar kuryba perduota [poppystation](https://www.poppystation.org/). Nepanašu į gyvą bendruomenę.
+3. ASPIR. Įdomu nemačiau niekur kad jis bent stovėtų, visada sėdi.  Detalios instrukcijos kaina ~2500$ [instructables](https://www.instructables.com/id/ASPIR-Full-Size-3D-Printed-Humanoid-Robot/)
+4. PiMecha https://github.com/sbcshop/PiMecha
+5. PLEN2
+
+
+https://all3dp.com/1/3d-printed-robot-print-robots/

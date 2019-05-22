@@ -2,7 +2,7 @@
 layout: post
 title: Senonai - kas tai
 lang: lt
-date: 2016-01-16 23:59
+date: 2018-01-16 23:59
 categories:
     - lt
 summary: Informacija apie senonus
@@ -19,9 +19,9 @@ Senonai
 
 Kaip rašo: (http://www.speech.cs.cmu.edu/sphinxman/opensource.html) tai yra bendras senone panaudojimo aprašymas:
 
-Atpažįstant šneką reikia galimybės pridėti naujus žodžius. Kad nereiktų iš naujo mokyti šnekos modelio, kiekvieną kart priderant žodį, reikia kurti tinkamus šnekos modelius mokymo metu. Senonai yra šnekos modelio nepriklausomos sudėtinės dalys. Senonų sekos sudaro trifonų modelius. Kuris seka yra tinkama trifonui, yra sprendžiama naudojant "genėtą" sprendimų medį. Šio medžio kiekvieną lapą sudaro keletą fonemų(ir jų kontekstai?). CMU Sphinx kiekveina šaka(ir rinkinys) turi identifikacijos numerį, kurie vaidinami įrankyje:  "tied state id" arba "senone id". Tokia medžio šaka yra surišama su būsena arba senonu. 
+Atpažįstant šneką reikia galimybės pridėti naujus žodžius. Kad nereiktų iš naujo mokyti šnekos modelio, kiekvieną kart priderant žodį, reikia kurti tinkamus šnekos modelius mokymo metu. Senonai yra šnekos modelio nepriklausomos sudėtinės dalys. Senonų sekos sudaro trifonų modelius. Kuris seka yra tinkama trifonui, yra sprendžiama naudojant "genėtą" sprendimų medį. Šio medžio kiekvieną lapą sudaro keletą fonemų(ir jų kontekstai?). CMU Sphinx kiekveina šaka(ir rinkinys) turi identifikacijos numerį, kurie vaidinami įrankyje:  "tied state id" arba "senone id". Tokia medžio šaka yra surišama su būsena arba senonu.
 
-Yra vienas "genėtas" sprendimų medis kiekvienos fonemos kiekviena būsenai(ne trifonio). fonema (kartu su visu kontekstu?) sudaro trifoną. Kuriant akustinį modelį, užtenka ieškoti sprendimo medžio lapo(kuris aprašo kontekstą) ir techniškai yra aprašomas kaip senone-id. Senone-id aprašo triphone būseną HMM modelyje. 
+Yra vienas "genėtas" sprendimų medis kiekvienos fonemos kiekviena būsenai(ne trifonio). fonema (kartu su visu kontekstu?) sudaro trifoną. Kuriant akustinį modelį, užtenka ieškoti sprendimo medžio lapo(kuris aprašo kontekstą) ir techniškai yra aprašomas kaip senone-id. Senone-id aprašo triphone būseną HMM modelyje.
 
 
 ### Senone panaudojamumas(Nepabaigta)

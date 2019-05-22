@@ -1,7 +1,7 @@
 # In _config.yml
 #markdown: rdiscount
 
-name: "Mondhs.github.io"
+title: "mondhs.github.io"
 description: "Various things on Speech Recognition"
 
 
