@@ -1,6 +1,8 @@
 # In _config.yml
 #markdown: rdiscount
 
+github: [metadata]
+encoding: UTF-8
 title: "mondhs.github.io"
 description: "Various things on Speech Recognition"
 

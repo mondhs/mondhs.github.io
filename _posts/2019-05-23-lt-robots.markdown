@@ -11,16 +11,35 @@ tags:
 ---
 
 
-Robotai Edukacijai
+---------------------
 ---------------------
 
-### Robotai
+## Robotai
 
-1. Nao v6 9000€. Pilnai pritaikytas naudoti mokymo tikslams tiek išvaizda, tiek programine įranga. kaina iš [robotlab](https://www.robotlab.com/store/nao-power-v6-educator-pack)
-2. Poppy. Atviro kodo ir platformos [poppy-project](https://github.com/poppy-project/poppy-humanoid). Projektas nebeaktyvus nuo 2017. Kaina apie 9000€ iš [generationrobots](https://www.generationrobots.com/en/403347-poppy-humanoid-robot-raspberry-pi-version-with-3d-parts.html). Dabar kuryba perduota [poppystation](https://www.poppystation.org/). Nepanašu į gyvą bendruomenę.
-3. ASPIR. Įdomu nemačiau niekur kad jis bent stovėtų, visada sėdi.  Detalios instrukcijos kaina ~2500$ [instructables](https://www.instructables.com/id/ASPIR-Full-Size-3D-Printed-Humanoid-Robot/)
-4. PiMecha https://github.com/sbcshop/PiMecha
-5. PLEN2
+Atviros platformos robotai:
+
+| Roboto vardas | Šalis | Spėjama kaina | Ūgis | Ar Kalba? | Komentarai | Puslapis | Išvaizda |
+|---|---|---|---|---|---|---|
+| NAO | Japonija | 9000€ [robotlab](https://www.robotlab.com/store/nao-power-v6-educator-pack)| 57cm | Taip(Lietuvių) | Pilnai pritaikytas naudoti mokymo tikslams tiek išvaizda, tiek programine įranga | [softbankrobotics](https://www.softbankrobotics.com/emea/en/nao) | !["Nao v6"](https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Nao_Robot_%28Robocup_2016%29.jpg/180px-Nao_Robot_%28Robocup_2016%29.jpg) |
+| Poppy | Prancūzija | 9000€ [generationrobots](https://www.generationrobots.com/en/403347-poppy-humanoid-robot-raspberry-pi-version-with-3d-parts.html) | 84 cm | Tik mikrofonas | Atviro kodo ir platformos [poppy-project](https://github.com/poppy-project/poppy-humanoid). Projektas nebeaktyvus nuo 2017. Dabar kūryba perduota poppystation. Nepanašu į gyvą bendruomenę. Akcentas į estetika. | [poppystation](https://www.poppystation.org/)  | ![poppy](https://www.poppy-project.org/assets/img/creatures/small/humanoid.jpg) |
+| NimbRo | Vokietija | ? | 134,5cm | galima pridėti? | Humanoid Open Platform Open Platform. Kaina neviešinama. [svetainė](http://www.nimbro.net/OP/) atviras platforma. 3D spausdinimas. Vokiečiai,   **Universität Bonn**. | [straipnis](https://arxiv.org/pdf/1809.10701.pdf) | ![MibRo](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNnAIxt8Y1GLv91sq8DM86KRUgW5EmolDV_IO0E0vUVOZjmx_4) |
+| InMoov | Prancūzija | 1500€ [wikipedia](https://en.wikipedia.org/wiki/InMoov) | Ūgis | galima pridėti? [link](https://scognito.wordpress.com/2018/04/28/inmoov-my-robot-lab-for-dummies-part-2/) | Atrodo gyva bendruomenė. 3D spausdinimas. Valdymas su programine įranga [myrobotlab](http://myrobotlab.org)  | [inmoov.fr](http://inmoov.fr/) | ![InMoov](https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/InMoov_Wheel_1.jpg/145px-InMoov_Wheel_1.jpg) |
+| ASPIR v2 | JAV | 2500$ | žmogaus  ūgis | ? | Įdomu nemačiau niekur kad pirma versija bent stovėtų, visada sėdi.  Detalios instrukcijos  [instructables](https://www.instructables.com/id/ASPIR-Full-Size-3D-Printed-Humanoid-Robot/), [versija antra](https://johnchoi313.weebly.com/aspir-v2.html). Prisidėjo **Carnegie Mellon University**. Panašu kaip vienetinis gerai aprašytas darbas, bet didelio progreso neviešinama dėl tolimesnių darbų. 3D spausdinimas. | [aspir-v2](https://johnchoi313.weebly.com/aspir-v2.html) | ![ASPIR v2](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTbOzlYbvWIGZHlY-P2qJ7cQsUcGNyf5z5z9BK9ibG85m2wAso) |
+| PiMecha | Jungtinė Karalystė | 479GBP | 36,4cm | Galima pridėti | Veikia smegenys ant Raspberry Pi. išvaizdą reiktų tobulinti. [github](https://github.com/sbcshop/PiMecha) | Puslapis | ![PiMecha](https://cdn.shopify.com/s/files/1/1217/2104/products/1_d36d2e41-b7ba-4c87-8542-a336cc1d8bde_375x375.jpg?v=1549559835) |
+| PLEN2 | Japonija | 700$ [link](https://plen.jp/wp/en/shop2/) | 20cm | Ne | Intel Edison procesorius. Galima programuoti python.  | [plen](https://plen.jp/wp/en/plen2-2/) | ![PLEN2](https://lh4.googleusercontent.com/--rF_wNKyHcU/Ux_ZobT-HUI/AAAAAAAAAEM/U4Q18dg2vfk/w380-h380-no/plenandplen2_380x380.png "PLEN2") |
+{: .table .table-striped }
 
 
-https://all3dp.com/1/3d-printed-robot-print-robots/
+
+
+
+## Pamąstymams renkantis robotą mokymui:
+* Kokio dydžio roboto reikia?
+    * Ar 2 metų vaiko dydis užtenkamas/perdidelis/permažas?
+    * Iš už kokio atstumo mokymo robotas turi būti matomas? iš sėdinčios klasės visi turi matyti? mokinys stovės prieš mokymo robotą?
+    * Kaip atrodys mokymo seka? Spėju: vienas mokinys stovės/sėdės prieš mokymo robotą ir bendraus? Minia aplinkui ratu tuo tarpu kels triukšmą.  Gal už tenka mažo robot ant stalo prieš mokinį?  
+    * Kaip robotas bus atgabentas į mokymo vietą? Mobilus ar tam skirta klasė?
+* Ar tik humnoidas tinkamas mokymui? Gal katė/šuo/o gal lempa pvz [Ergo Jr](https://www.poppy-project.org/en/robots/poppy-ergo-jr) gali tikti. Kaina dėl to gali kristi ženkliai o šnekėjimas/kalbėjimas vis vien galimas
+* Ar mokymo procese bus mokomas vieną mokinys ar visa klasę? Jei vienas mokinys gal geriau turėti mažų visai klasei, nei vieną didelė vienam mokiniui? Maži ir sąlyginai pigūs gali būti prioritetas žiūrint į korepiticija namuose? Užsienio gyvenančių lietuvių kalbos žinių palaikymas, plėtimas?
+* Ar negalima būtų įtraukti technikos įstaigas(KTU, VGTU ar pan) bendraujant su užsienio universitetais (pvz Bonos, Carnegie) adaptuoti atvitos platformos roboto lietuvos mokyklom? Komerciniai modeliai turėtų būŧi stabilesni, su savisaugos elementais ir su geresniais scenarijų programavimo įrankių.
+* Pagrindinę kainą sudaro kiek sanarių(variklių) robotas turi. Kiek svarbu grakštus judėjimas? Ar svarbu kad robotas būtų fiziškai greitas(pvz mankštos mokymas ar pan)?
