@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Privatus šnekos asistentas
+title: Robotai mokymams
 lang: lt
-date: 2019-05-28 21:59
+date: 2019-05-22 23:59
 categories:
     - lt
-summary: Savo privataus asistento kūrimas
+summary: Robotai skirti mokymo tikslams
 tags:
 - Robots
 ---
@@ -14,38 +14,33 @@ tags:
 ---------------------
 ---------------------
 
-## Privatūs asistentai
+## Robotai
 
-Jau yra keletas atviro kodo asistentų, kurių pagrindinis tikslas užŧikrinti privatumą:
-* [mycroft.ai](https://mycroft.ai/) - aktyvi bendruomenė. naudoja pocketshpinx atpažinimui. Bet sintezei naudoja Google TTS. Dauguma įgūdžiai pritaikyti JAV ir anglų kalbai.
-* [Jasper](https://jasperproject.github.io/) - projektas nebeaktyvus.
-* [Kalliope](https://kalliope-project.github.io/)
+Atviros platformos robotai:
 
-Noras būtų pažiūrėŧi į galimybes paruošti assitentą "pasidaryk pats" stiliumi. Tikslai tokio asistento būtų privatumas ir galimybė pritaiktyi "mažoms" kalboms. Asistento privalumas būtų informacijos paruošimas vartotojo balsine forma. Informacijos gavyba įprastu atveju reikės interneto, o tai jau kelia sunkumus tikram privatumo reikalavimams.   Reikės spręsti sekančias problemas.
+| Roboto vardas | Šalis | Spėjama kaina | Ūgis | Ar Kalba? | Komentarai | Puslapis | Išvaizda |
+|---|---|---|---|---|---|---|
+| NAO | Japonija | 9000€ [robotlab](https://www.robotlab.com/store/nao-power-v6-educator-pack)| 57cm | Taip(Lietuvių) | Pilnai pritaikytas naudoti mokymo tikslams tiek išvaizda, tiek programine įranga | [softbankrobotics](https://www.softbankrobotics.com/emea/en/nao) | !["Nao v6"](https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Nao_Robot_%28Robocup_2016%29.jpg/180px-Nao_Robot_%28Robocup_2016%29.jpg) |
+| Poppy | Prancūzija | 9000€ [generationrobots](https://www.generationrobots.com/en/403347-poppy-humanoid-robot-raspberry-pi-version-with-3d-parts.html) | 84 cm | Tik mikrofonas | Atviro kodo ir platformos [poppy-project](https://github.com/poppy-project/poppy-humanoid). Projektas nebeaktyvus nuo 2017. Dabar kūryba perduota poppystation. Nepanašu į gyvą bendruomenę. Akcentas į estetika. | [poppystation](https://www.poppystation.org/)  | ![poppy](https://www.poppy-project.org/assets/img/creatures/small/humanoid.jpg) |
+| NimbRo | Vokietija | ? | 134,5cm | galima pridėti? | Humanoid Open Platform Open Platform. Kaina neviešinama. [svetainė](http://www.nimbro.net/OP/) atviras platforma. 3D spausdinimas. Vokiečiai,   **Universität Bonn**. | [straipnis](https://arxiv.org/pdf/1809.10701.pdf) | ![MibRo](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNnAIxt8Y1GLv91sq8DM86KRUgW5EmolDV_IO0E0vUVOZjmx_4) |
+| InMoov | Prancūzija | 1500€ [wikipedia](https://en.wikipedia.org/wiki/InMoov) | ? | galima pridėti? [link](https://scognito.wordpress.com/2018/04/28/inmoov-my-robot-lab-for-dummies-part-2/) | Atrodo gyva bendruomenė. 3D spausdinimas. Valdymas su programine įranga [myrobotlab](http://myrobotlab.org)  | [inmoov.fr](http://inmoov.fr/) | ![InMoov](https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/InMoov_Wheel_1.jpg/145px-InMoov_Wheel_1.jpg) |
+| ASPIR v2 | JAV | 2500$ | žmogaus  ūgis | ? | Įdomu nemačiau niekur kad pirma versija bent stovėtų, visada sėdi.  Detalios instrukcijos  [instructables](https://www.instructables.com/id/ASPIR-Full-Size-3D-Printed-Humanoid-Robot/), [versija antra](https://johnchoi313.weebly.com/aspir-v2.html). Prisidėjo **Carnegie Mellon University**. Panašu kaip vienetinis gerai aprašytas darbas, bet didelio progreso neviešinama dėl tolimesnių darbų. 3D spausdinimas. | [aspir-v2](https://johnchoi313.weebly.com/aspir-v2.html) | ![ASPIR v2](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTbOzlYbvWIGZHlY-P2qJ7cQsUcGNyf5z5z9BK9ibG85m2wAso) |
+| PiMecha | Jungtinė Karalystė | 479GBP | 36,4cm | Galima pridėti | Veikia smegenys ant Raspberry Pi. išvaizdą reiktų tobulinti. [github](https://github.com/sbcshop/PiMecha) | Puslapis | ![PiMecha](https://cdn.shopify.com/s/files/1/1217/2104/products/1_d36d2e41-b7ba-4c87-8542-a336cc1d8bde_375x375.jpg?v=1549559835) |
+| PLEN2 | Japonija | 700$ [link](https://plen.jp/wp/en/shop2/) | 20cm | Ne | Intel Edison procesorius. Galima programuoti python.  | [plen](https://plen.jp/wp/en/plen2-2/) | ![PLEN2](https://lh4.googleusercontent.com/--rF_wNKyHcU/Ux_ZobT-HUI/AAAAAAAAAEM/U4Q18dg2vfk/w380-h380-no/plenandplen2_380x380.png "PLEN2") |
+| Rapiro | Japonija | 495$+ | 25cm | Galima pridėti | Skirtas robotikai mokinti. Galima pridėti raspberry su garsiakalbiu ir mikrofonu. Trūksta baterijų ir daug kitų savarankiško roboto elementų. | [rapiro.com](http://www.rapiro.com/) | Išvaizda |
+{: .table .table-striped }
 
-### Techninė ir programinė įranga
 
-Balso atpažinimui, reikia techninės įrangos: garso įrašymo ir atkūrimo, bendros paskirties skaičiavimo modulis. Reikės programinės įrangos  šnekos atpažintuvo,  ketinimų atpažintu, informacijos gavybos modulio, sintezatoriaus. Privatus asistentas atpažinimą ir sintezę turėtų atlikti pats, tad reikės balanso tarp kokių gebėjimų asistentas turi ir kokių skaičiavimų pajėgumų reikia.
 
-Techninė įranga
-* Vienos plokštės kompiuteris - bendros paskirties skaičiavimo modulis: manau reiktų kad būtų bent 4 branduoliai.
-    * Raspberry PI
-    * Orange Pi
-* Atkūrimo įranga - reikia mažo garsiakalbio, bet, kad gerai atkurtų žemus garsus. Tam gali padėti ir dizainas. Pridedant akustinius kanalus garsą galima padaryti "švaresnį"
-* Įrašymo įranga - norint pagerinti balso atpažinimą, triukšmo šalinimą, galima papildomos informacijos apie garsą pridedant daugiau mikrofonų
-    * du mikrofonai - turi palengvinti triukšmų šalinimą. vis vien sunku kalba - kalboje
-        * [ReSpeaker 2-Mics Pi HAT](https://www.seeedstudio.com/ReSpeaker-2-Mics-Pi-HAT.html) >10€
-    * 4 mikrofonai - galima nustatyti balso kryptį ir judėjimą:
-        * [ReSpeaker 4-Mic Linear Array Kit for Raspberry Pi](https://www.seeedstudio.com/category/Development-Platforms-c-1002/single-board-computer-c-950/category/Speech-Recognition-c-44/ReSpeaker-4-Mic-Linear-Array-Kit-for-Raspberry-Pi.html) >30€
-    * 6 mikrofonai
-        * [ReSpeaker 6-Mic Circular Array Kit for Raspberry Pi](https://www.seeedstudio.com/category/Development-Platforms-c-1002/single-board-computer-c-950/category/Speech-Recognition-c-44/ReSpeaker-6-Mic-Circular-Array-Kit-for-Raspberry-Pi.html) >40€
 
-Norint ištraukti informacija galima naudoti programinę techninę įrangą: [ReSpeaker Core v2.0](https://www.seeedstudio.com/category/Development-Platforms-c-1002/single-board-computer-c-950/category/Speech-Recognition-c-44/ReSpeaker-Core-v2-0.html) 100€.
 
-Galima bandyti naudoti biblioteką ODAS – [Artificial Audition](https://introlab.3it.usherbrooke.ca/sam/ca/description-du-projet/software/odas/) (Université de Sherbrooke) 
-
-### Garso įranga
-
-### Dizainas
-
-Problematika paruošti patrauklų, sąlyginai mažą, bet ir sutalpinančias visas aukščiau išvardintas detalias
+## Pamąstymams renkantis robotą mokymui:
+* Kokio dydžio roboto reikia?
+    * Ar 2 metų vaiko dydis užtenkamas/perdidelis/permažas?
+    * Iš už kokio atstumo mokymo robotas turi būti matomas? iš sėdinčios klasės visi turi matyti? mokinys stovės prieš mokymo robotą?
+    * Kaip atrodys mokymo seka? Spėju: vienas mokinys stovės/sėdės prieš mokymo robotą ir bendraus? Minia aplinkui ratu tuo tarpu kels triukšmą.  Gal už tenka mažo robot ant stalo prieš mokinį?  
+    * Kaip robotas bus atgabentas į mokymo vietą? Mobilus ar tam skirta klasė?
+* Ar tik humnoidas tinkamas mokymui? Gal katė/šuo/o gal lempa pvz [Ergo Jr](https://www.poppy-project.org/en/robots/poppy-ergo-jr) gali tikti. Kaina dėl to gali kristi ženkliai o šnekėjimas/kalbėjimas vis vien galimas
+* Ar mokymo procese bus mokomas vieną mokinys ar visa klasę? Jei vienas mokinys gal geriau turėti mažų visai klasei, nei vieną didelė vienam mokiniui? Maži ir sąlyginai pigūs gali būti prioritetas žiūrint į korepiticija namuose? Užsienio gyvenančių lietuvių kalbos žinių palaikymas, plėtimas?
+* Ar negalima būtų įtraukti technikos įstaigas(KTU, VGTU ar pan) bendraujant su užsienio universitetais (pvz Bonos, Carnegie) adaptuoti atvitos platformos roboto lietuvos mokyklom? Komerciniai modeliai turėtų būŧi stabilesni, su savisaugos elementais ir su geresniais scenarijų programavimo įrankių.
+* Pagrindinę kainą sudaro kiek sanarių(variklių) robotas turi. Kiek svarbu grakštus judėjimas? Ar svarbu kad robotas būtų fiziškai greitas(pvz mankštos mokymas ar pan)?
