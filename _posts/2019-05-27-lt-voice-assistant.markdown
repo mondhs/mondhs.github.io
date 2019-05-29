@@ -41,7 +41,7 @@ Techninė įranga
         * [ReSpeaker 6-Mic Circular Array Kit for Raspberry Pi](https://www.seeedstudio.com/category/Development-Platforms-c-1002/single-board-computer-c-950/category/Speech-Recognition-c-44/ReSpeaker-6-Mic-Circular-Array-Kit-for-Raspberry-Pi.html) >40€ - Tiek turi Amazon Alexa
     * 16 mikrofonų?: https://github.com/introlab/16SoundsUSB
 
-Norint ištraukti informacija galima naudoti programinę techninę įrangą: [ReSpeaker Core v2.0](https://www.seeedstudio.com/category/Development-Platforms-c-1002/single-board-computer-c-950/category/Speech-Recognition-c-44/ReSpeaker-Core-v2-0.html) 100€.
+Norint ištraukti informacija galima naudoti techninę įrangą: [ReSpeaker Core v2.0](https://www.seeedstudio.com/category/Development-Platforms-c-1002/single-board-computer-c-950/category/Speech-Recognition-c-44/ReSpeaker-Core-v2-0.html) 100€.
 
 Galima bandyti naudoti biblioteką ODAS – [Artificial Audition](https://introlab.3it.usherbrooke.ca/sam/ca/description-du-projet/software/odas/) (Université de Sherbrooke)
 https://youtu.be/n7y2rLAnd5I
