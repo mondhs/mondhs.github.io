@@ -1,0 +1,215 @@
+<!doctype html>
+<html data-theme="light">
+      <!-- 
+  
+  NOTE: This plugin will not be visible on public views of a channel. 
+        If you intend to make your channel public, consider using the
+        MATLAB Visualization App to create your visualizations.
+  
+  -->  
+    <head>
+        <meta charset="utf-8">
+        <title>Months</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- %%PLUGIN_CSS%% -->
+        <link rel="stylesheet" href="https://leeoniya.github.io/uPlot/dist/uPlot.min.css">
+        <!-- Pico.css -->
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/pico.min.css"/>
+        <style>
+            .chartPanel{
+                display: flex;   
+                justify-content: center; 
+            }
+        </style>
+        <!-- /%%PLUGIN_CSS%% -->
+    </head>
+    <body>
+        <main class="container">
+            <hr/>
+            <article id="article">
+                <div id="panel" class="chartPanel">
+                    <svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">      
+                        <polygon points="563,191 1106,370 23,370" 
+                            style="fill: white; stroke: grey; stroke-width: 5; fill-opacity: 0.1; stroke-opacity: 0.9" 
+                        />
+                        <rect class="homeWalls" width="1046" height="215" x="42.5" y="372" 
+                            style="fill: white; stroke: grey; stroke-width: 5; fill-opacity: 0.1; stroke-opacity: 0.9" 
+                        />
+                            
+                        <ellipse cx="346" cy="143" rx="0" ry="0" fill="rgb(91, 91, 91)" stroke="rgb(0, 0, 0)"/>
+                        <g>
+                            <ellipse rx="22.5" ry="15" cx="156.5" cy="411" 
+                                style="fill: grey; stroke: white; stroke-width: 1; fill-opacity: 1; stroke-opacity: 0.9" 
+                            />
+                            <rect x="115" y="412" width="83" height="142"
+                                style="fill: grey; stroke: white; stroke-width: 1; fill-opacity: 1; stroke-opacity: 0.9" 
+                            />
+                        </g>
+                        <!--Boileris-->
+                            <ellipse cx="893.5" cy="549.5" rx="89.5" ry="14"
+                                style="fill: grey; stroke: white; stroke-width: 1; fill-opacity: 1; stroke-opacity: 0.9" 
+                            />
+                            <rect x="804" y="428.5" width="180" height="121" 
+                            style="fill: grey; stroke: white; stroke-width: 1; fill-opacity: 1; stroke-opacity: 0.9" 
+                            />
+                            <ellipse cx="895" cy="426.5" rx="90" ry="14"
+                            style="fill: grey; stroke: white; stroke-width: 1; fill-opacity: 1; stroke-opacity: 0.9" 
+                            />
+                        <!--/Boileris-->
+                        
+                        <ellipse cx="542.5" cy="512" rx="28.5" ry="14"
+                                style="fill: grey; stroke: white; stroke-width: 1; fill-opacity: 1; stroke-opacity: 0.9"
+                            />
+                            
+                            <rect x="515" y="462" width="56" height="54"
+                                style="fill: grey; stroke: white; stroke-width: 1; fill-opacity: 1; stroke-opacity: 0.9" 
+                            />
+                            <ellipse cx="543.5" cy="465" rx="28.5" ry="14"
+                                style="fill: grey; stroke: white; stroke-width: 1; fill-opacity: 1; stroke-opacity: 0.9"
+                            />
+                    
+                        
+                        <rect fill="red" x="203" y="419" width="602" height="10" />
+                        <rect fill="blue" x="200" y="542" width="602" height="10"/>
+                        <rect fill="blue" x="538" y="526" width="10" height="23"/>
+                        <rect fill="red" x="540" y="426" width="10" height="23"/>
+                        
+                        <rect fill="red" x="986" y="450" width="70" height="10"/>
+                        <rect fill="blue" x="986" y="510" width="70" height="10"/>
+                    
+                        <text id="tempContainer_field1" x="69" y="571" fill="green" stroke="black" font-size="large">t1</text>
+                        <text id="tempContainer_field2" x="1001" y="436" fill="red" stroke="black" font-size="large">t2</text>
+                        <text id="tempContainer_field3" x="887" y="517" fill="blue" stroke="black" font-size="large">t3</text>
+                        <text id="tempContainer_field4" x="532" y="408" fill="black" stroke="grey" font-size="large">t4</text>
+                        <text id="tempContainer_field5" x="842" y="246.5" fill="brown" stroke="black" font-size="large">t5</text>
+                        <text id="created_at" x="41" y="246.5" fill="brown" stroke="black" font-size="large">20000-00-00T00:00:00</text>
+                    
+                        
+                    </svg>
+                </div>
+                
+            </article>
+            <hr/>
+            <details id="chartPanmel">
+                <summary>Grafikas</summary>
+                <article>
+                    <div id="chart1" class="chartPanel"></div>
+                </article>
+            </details>
+        </main>
+
+         <!-- %%PLUGIN_JAVASCRIPT%% -->
+            <script src="https://leeoniya.github.io/uPlot/dist/uPlot.iife.min.js"> </script>
+            <script>
+            var G_CHART_LOADED=false;
+
+            window.onload = (event) => {
+                console.log("page is fully loaded2");
+                const details = document.getElementById("chartPanmel");
+                setTimeout(() => fetcDataForDashboard(), 1000);
+                details.addEventListener("toggle", (event) => {
+                    if (details.open && G_CHART_LOADED == false) {
+                        G_CHART_LOADED=true;
+                        console.time("chart");
+                        fetcDataForChart();
+
+                    } else {
+                        /* the element was toggled closed */
+                    }
+                });
+            };
+
+            const ltNames = {
+                MMMM: ["Sausis","Vasarės","Kovas","Balandis","Gegužė","Birželis","Liepa","Rugpjūtis","Rugsėjis","Spalis","Lapkritis","Gruodis"],
+                MMM:  ["Saus","Vasr","Kovs","Baln","Gegž","Birž","Liep","Rugp","Rugs","Spal","Lapk","Gruo"],
+                WWWW: ["Sekmadienis","Pirmadienis","Antradienis","Trečiadienis","Ketvirtadienis","Penktadienis","Šeštadienis"],
+                WWW:  ["Sek","Pir","Ant","Tre","Ket","Pen","Šeš"],
+            };
+
+
+            function fetcDataForDashboard(){
+                fetch("https://api.thingspeak.com/channels/57241/feeds.json?results=1&timezone=Europe%2FVilnius")
+                .then(r => r.json()).then(packed => {
+                    const first = packed.feeds[0];
+                    console.log("feeds", first);
+                    var field1 = Math.round(first.field1);
+                    var field2 = Math.round(first.field2);
+                    var field3 = Math.round(first.field3);
+                    var field4 = Math.round(first.field4);
+                    var field5 = first.field5;//outside
+                    var created_at = first.created_at;
+                    console.log("field1", field1);
+                    console.log("created_at", created_at);
+                    document.getElementById("tempContainer_field1").textContent = field1;
+                    document.getElementById("tempContainer_field2").textContent = field2;
+                    document.getElementById("tempContainer_field3").textContent = field3;
+                    document.getElementById("tempContainer_field4").textContent = field4;
+                    document.getElementById("tempContainer_field5").textContent = field5;
+                    document.getElementById("created_at").textContent = created_at;
+                });
+            }
+
+            function fetcDataForChart(){
+                fetch("https://api.thingspeak.com/channels/57241/feeds.json?results=10&timezone=Europe%2FVilnius")
+                .then(r => r.json()).then(packed => {
+                    let data = prepData(packed);
+                    setTimeout(() => makeChart(data), 0);
+                });
+            }
+
+            function prepData(responseData){
+                console.log("prepData(responseData)", responseData);
+                const feeds = responseData.feeds;
+                let data = [
+                    feeds.map((v,i) => new Date(v.created_at)/1000),
+                    feeds.map((v,i) => v.field1),//temp1
+                    feeds.map((v,i) => v.field2),//temp2
+                    feeds.map((v,i) => v.field3),//temp3
+                    feeds.map((v,i) => v.field4),//temp4
+                    feeds.map((v,i) => v.field5),//outside
+                    
+
+                ];
+                return data;
+
+                
+            }
+
+            function makeChart(data) {
+                const opts = {
+                    width: 1220,
+                    height: 600,
+                    title: "Namai",
+                    tzDate: ts => uPlot.tzDate(new Date(ts * 1e3), 'Etc/UTC'),
+                    fmtDate: tpl => uPlot.fmtDate(tpl, ltNames),
+                    series: [
+                        {},
+                        {
+                            stroke: "green", label: "temp1",
+                        },
+                        {
+                            stroke: "red", label: "temp2",
+                        },
+                        {
+                            stroke: "blue", label: "temp3",
+                        },
+                        {
+                            stroke: "black", label: "temp4",
+                        },
+                        {
+                            stroke: "brown", label: "Lauko",
+                        },
+                    ]
+                };
+
+                let u = new uPlot(opts, data, document.getElementById("chart1"));
+                Promise.resolve().then(() => {
+                    console.timeEnd("chart");
+                    window.scrollTo(0, document.body.scrollHeight);
+                });
+            }
+            </script>
+         <!-- /%%PLUGIN_JAVASCRIPT%% -->
+    </body>
+</html>
